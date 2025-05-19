@@ -1,0 +1,191 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.scrollarea {
+  flex: 1;
+  
+  overflow-y: hidden;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+  width: 80%;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 56px !important;
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+
+.nickname-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  border-top: .5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: .5px solid rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.nickname-label {
+  width: 105px;
+}
+
+.nickname-input {
+  flex: 1;
+}
+
+.container {
+  padding: 40rpx;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+
+.logo {
+  width: 180rpx;
+  height: 180rpx;
+  margin-bottom: 20rpx;
+  border-radius: 30rpx;
+  box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #7f8c8d;
+}
+
+.game-selection {
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  color: #2c3e50;
+  margin-bottom: 30rpx;
+  text-align: center;
+  font-weight: 500;
+}
+
+.game-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+}
+
+.game-item {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.game-item:active {
+  transform: scale(0.98);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.game-item image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 15rpx;
+  margin-right: 30rpx;
+}
+
+.game-info {
+  flex: 1;
+}
+
+.game-name {
+  font-size: 32rpx;
+  color: #2c3e50;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.game-brief {
+  font-size: 24rpx;
+  color: #7f8c8d;
+}
+
+.start-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40rpx 0;
+}
+
+.start-btn {
+  width: 80%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #3498db;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 44rpx;
+  text-align: center;
+  box-shadow: 0 4rpx 12rpx rgba(52, 152, 219, 0.2);
+  transition: all 0.3s ease;
+}
+
+.start-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2rpx 8rpx rgba(52, 152, 219, 0.2);
+}
+
+.start-btn[disabled] {
+  background: #bdc3c7;
+  box-shadow: none;
+}
+
+.about-link {
+  margin-top: 40rpx;
+  color: #7f8c8d;
+  font-size: 28rpx;
+  text-decoration: underline;
+}

@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="header">
+    <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    <text class="title">桌游规则助手</text>
+  </view>
+
+  <view class="content">
+    <view class="section">
+      <text class="section-title">关于我们</text>
+      <text class="section-content">桌游规则助手是一款帮助玩家快速了解和学习桌游规则的小程序。我们致力于为桌游爱好者提供清晰、易懂的规则说明，让更多人能够轻松入门桌游世界。</text>
+    </view>
+
+    <view class="section">
+      <text class="section-title">联系我们</text>
+      <text class="section-content">如果您有任何建议或反馈，欢迎通过以下方式联系我们：</text>
+      <text class="contact-item">邮箱：contact@boardgamehelper.com</text>
+      <text class="contact-item">微信：BoardGameHelper</text>
+    </view>
+
+    <view class="section">
+      <text class="section-title">版本信息</text>
+      <text class="section-content">当前版本：1.0.0</text>
+      <text class="section-content">更新日期：2024-03-20</text>
+    </view>
+  </view>
+
+  <view class="navigation">
+    <button class="nav-btn" bindtap="goToHome">返回首页</button>
+  </view>
+</view> 

@@ -1,0 +1,157 @@
+<view class="container" wx:if="{{gameInfo}}">
+  <!-- 顶部导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-title">{{gameInfo.name}}</view>
+    <view class="nav-menu" bindtap="toggleMenu">
+      <text class="menu-icon">≡</text>
+    </view>
+  </view>
+
+  <!-- 下拉菜单 -->
+  <view class="dropdown-menu {{showMenu ? 'show' : ''}}">
+    <view class="menu-item" bindtap="goToHome">返回首页</view>
+    <view class="menu-item" bindtap="goToRules">详细规则</view>
+    <button class="menu-item share-btn" open-type="share">分享游戏</button>
+  </view>
+  <!-- 内容区域 -->
+  <swiper class="content-swiper" bindchange="handleSwiperChange">
+    <!-- 基本信息页面 -->
+    <swiper-item>
+      <scroll-view scroll-y class="page-content">
+        <view class="header">
+          <text class="game-desc">{{gameInfo.description}}</text>
+        </view>
+        <view class="section">
+          <text class="section-title">基本信息</text>
+          <view class="basic-info">
+            <view class="info-item">
+              <text class="label">玩家人数</text>
+              <text class="value">{{gameInfo.players}}</text>
+            </view>
+            <view class="info-item">
+              <text class="label">游戏时长</text>
+              <text class="value">{{gameInfo.duration}}</text>
+            </view>
+            <view class="info-item">
+              <text class="label">推荐年龄</text>
+              <text class="value">{{gameInfo.age}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view class="section">
+          <text class="section-title">游戏规则</text>
+          <view class="rules-content">
+            <view class="rule-block">
+              <text class="rule-title">游戏设置</text>
+              <text class="rule-text">{{gameInfo.rules.setup}}</text>
+            </view>
+            <view class="rule-block">
+              <text class="rule-title">回合流程</text>
+              <text class="rule-text">{{gameInfo.rules.turns}}</text>
+            </view>
+            <view class="rule-block">
+              <text class="rule-title">胜利条件</text>
+              <text class="rule-text">{{gameInfo.rules.victory}}</text>
+            </view>
+            <view class="rule-block">
+              <text class="rule-title">游戏技巧</text>
+              <text class="rule-text">{{gameInfo.rules.tips}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+    <!-- 详细介绍页面 -->
+    <swiper-item>
+      <scroll-view scroll-y class="page-content">
+        <view class="section">
+          <text class="section-title">详细介绍</text>
+          <view class="details">
+            <view class="detail-block">
+              <text class="detail-title">背景设定</text>
+              <text class="detail-content">{{gameInfo.details.background}}</text>
+            </view>
+            
+            <view class="detail-block">
+              <text class="detail-title">核心特色</text>
+              <block wx:if="{{gameInfo.name === '卡坦岛'}}">
+                <view class="feature-item">
+                  <text class="feature-title">动态版图</text>
+                  <text class="feature-content">{{gameInfo.details.features.dynamicBoard}}</text>
+                </view>
+                <view class="feature-item">
+                  <text class="feature-title">策略维度</text>
+                  <view class="strategy-content">
+                    <text class="strategy-subtitle">资源垄断</text>
+                    <text class="strategy-text">{{gameInfo.details.features.strategies.resourceMonopoly}}</text>
+                    <text class="strategy-subtitle">流派分化</text>
+                    <view class="strategy-list">
+                      <text wx:for="{{gameInfo.details.features.strategies.playStyles}}" wx:key="index" class="strategy-item">{{item}}</text>
+                    </view>
+                  </view>
+                </view>
+              </block>
+              <block wx:else>
+                <view class="feature-item">
+                  <text class="feature-title">双时代系统</text>
+                  <view class="era-list">
+                    <text wx:for="{{gameInfo.details.features.dualEra}}" wx:key="index" class="era-item">{{item}}</text>
+                  </view>
+                </view>
+                <view class="feature-item">
+                  <text class="feature-title">经济循环</text>
+                  <text class="feature-content">{{gameInfo.details.features.economicCycle}}</text>
+                </view>
+                <view class="feature-item">
+                  <text class="feature-title">策略深度</text>
+                  <view class="strategy-list">
+                    <text wx:for="{{gameInfo.details.features.strategies}}" wx:key="index" class="strategy-item">{{item}}</text>
+                  </view>
+                </view>
+                <view class="feature-item">
+                  <text class="feature-title">扩展内容</text>
+                  <view class="expansion-list">
+                    <text wx:for="{{gameInfo.details.features.expansions}}" wx:key="index" class="expansion-item">{{item}}</text>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+    <!-- 游戏配件页面 -->
+    <swiper-item>
+      <scroll-view scroll-y class="page-content">
+        <view class="section">
+          <text class="section-title">游戏配件</text>
+          <view class="tokens">
+            <view class="token-item" wx:for="{{gameInfo.tokens}}" wx:key="name">
+              <text class="token-icon">{{item.icon}}</text>
+              <view class="token-info">
+                <text class="token-name">{{item.name}}</text>
+                <text class="token-desc">{{item.description}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+  <!-- 底部标签栏 -->
+  <view class="tab-bar">
+    <view class="tab-item {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">
+      <text class="tab-text">基本信息</text>
+    </view>
+    <view class="tab-item {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">
+      <text class="tab-text">详细介绍</text>
+    </view>
+    <view class="tab-item {{currentTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">
+      <text class="tab-text">游戏配件</text>
+    </view>
+  </view>
+</view>

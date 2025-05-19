@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view class="header">
+      <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+      <text class="title">桌游规则助手</text>
+      <text class="subtitle">让桌游规则一目了然</text>
+    </view>
+
+    <view class="game-selection">
+      <text class="section-title">选择要查看的桌游</text>
+      <view class="game-list">
+        <view class="game-item" bindtap="selectGame" data-game="catan">
+          <image src="/images/catan.png" mode="aspectFit"></image>
+          <view class="game-info">
+            <text class="game-name">卡坦岛</text>
+            <text class="game-brief">经典策略性桌游</text>
+          </view>
+        </view>
+        <view class="game-item" bindtap="selectGame" data-game="birmingham">
+          <image src="/images/birmingham.png" mode="aspectFit"></image>
+          <view class="game-info">
+            <text class="game-name">伯明翰</text>
+            <text class="game-brief">工业革命主题策略游戏</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="start-section">
+      <button class="start-btn" bindtap="startGame" disabled="{{!selectedGame}}">查看规则</button>
+    </view>
+
+    <view class="about-link" bindtap="goToAbout">
+      <text>关于我们</text>
+    </view>
+  </view>
+</scroll-view>

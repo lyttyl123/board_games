@@ -1,0 +1,36 @@
+<view class="container" wx:if="{{gameInfo && gameInfo.name}}">
+  <view class="header">
+    <text class="game-title">{{gameInfo.name}}</text>
+  </view>
+
+  <view class="rules-section">
+    <view class="rule-block">
+      <text class="section-title">游戏设置</text>
+      <text class="rule-content">{{gameInfo.rules.setup || '暂无设置说明'}}</text>
+    </view>
+
+    <view class="rule-block">
+      <text class="section-title">回合流程</text>
+      <text class="rule-content">{{gameInfo.rules.turns || '暂无回合说明'}}</text>
+    </view>
+
+    <view class="rule-block">
+      <text class="section-title">胜利条件</text>
+      <text class="rule-content">{{gameInfo.rules.victory || '暂无胜利条件'}}</text>
+    </view>
+
+    <view class="rule-block">
+      <text class="section-title">游戏技巧</text>
+      <text class="rule-content">{{gameInfo.rules.tips || '暂无游戏技巧'}}</text>
+    </view>
+  </view>
+
+  <view class="navigation">
+    <button class="nav-btn" bindtap="goToGame">返回游戏</button>
+    <button class="nav-btn" bindtap="goToHome">返回首页</button>
+    <button class="nav-btn share-btn" open-type="share">分享规则</button>
+  </view>
+</view>
+<view class="loading" wx:else>
+  <text>加载中...</text>
+</view> 

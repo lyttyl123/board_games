@@ -1,0 +1,402 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f8f9fa;
+  
+  /* 移除 position: relative（除非必要） */
+}
+/* 内容区域 */
+.content-swiper {
+  align-items: center;
+  flex: 1;
+  margin-top: 88rpx;
+  margin-bottom: 100rpx;
+  height: calc(100vh);
+}
+.page-content {
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 32rpx;
+  color: #666;
+}
+
+/* 顶部导航栏 */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  background: #fff;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.nav-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.nav-menu {
+  padding: 10rpx;
+}
+
+.menu-icon {
+  font-size: 40rpx;
+  color: #2c3e50;
+}
+
+/* 下拉菜单 */
+.dropdown-menu {
+  position: fixed;
+  top: 88rpx;
+  right: 30rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.15);
+  transform: translateY(-10rpx);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+.dropdown-menu.show {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* .menu-item {
+  padding: 20rpx 40rpx;
+  font-size: 28rpx;
+  color: #2c3e50;
+  border-bottom: 1rpx solid #eee;
+} */
+.menu-item {
+  position: relative;   /* 关键：启用定位 */
+  z-index: 999;         /* 设置最高层级 */
+  padding: 20rpx 40rpx;
+  font-size: 28rpx;
+  color: #2c3e50;
+  border-bottom: 1rpx solid #eee;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:active {
+  background: #f8f9fa;
+}
+
+
+/* 底部标签栏 */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: #fff;
+  padding: 20rpx 0;
+  box-shadow: 0 -2rpx 10rpx rgba(0,0,0,0.05);
+  z-index: 100;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 15rpx 0;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #3498db;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background: #3498db;
+  border-radius: 2rpx;
+}
+
+.tab-text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.tab-item.active .tab-text {
+  color: #3498db;
+  font-weight: bold;
+}
+
+/* 其他样式保持不变 */
+.header {
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.game-desc {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+.section {
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20rpx;
+  display: block;
+  position: relative;
+  padding-left: 24rpx;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8rpx;
+  height: 32rpx;
+  background: #3498db;
+  border-radius: 4rpx;
+}
+
+.basic-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.info-item {
+  flex: 1;
+  min-width: 200rpx;
+  background: #f8f9fa;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.label {
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.value {
+  font-size: 28rpx;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+}
+
+.detail-block {
+  background: #f8f9fa;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  border-left: 4rpx solid #3498db;
+}
+
+.detail-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 15rpx;
+  display: block;
+}
+
+.detail-content {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+.feature-item {
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.05);
+}
+
+.feature-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.feature-content {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+.strategy-content {
+  margin-top: 15rpx;
+}
+
+.strategy-subtitle {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 15rpx 0 10rpx;
+  display: block;
+}
+
+.strategy-text {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+.strategy-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  margin-top: 10rpx;
+}
+
+.strategy-item {
+  font-size: 24rpx;
+  color: #666;
+  background: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 30rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.05);
+}
+
+.era-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.era-item {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+  padding-left: 24rpx;
+  position: relative;
+}
+
+.era-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #3498db;
+}
+
+.expansion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.expansion-item {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+  padding-left: 24rpx;
+  position: relative;
+}
+
+.expansion-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #3498db;
+}
+
+.tokens {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.token-item {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  background: #f8f9fa;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.05);
+}
+
+.token-icon {
+  font-size: 40rpx;
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.1);
+}
+
+.token-info {
+  flex: 1;
+}
+
+.token-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 5rpx;
+  display: block;
+}
+
+.token-desc {
+  font-size: 24rpx;
+  color: #666;
+  line-height: 1.4;
+}
+
+.share-btn {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  line-height: 1.5;
+}
