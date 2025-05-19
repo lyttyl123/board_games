@@ -10,6 +10,13 @@
     <view class="game-selection">
       <text class="section-title">选择要查看的桌游</text>
       <view class="game-list">
+        <view class="game-item" bindtap="selectGame" data-game="poker">
+          <image src="https://tse2-mm.cn.bing.net/th/id/OIP-C.0lFd3V1ugoAdSLcU4Ao9LwAAAA?rs=1&pid=ImgDetMain" mode="aspectFit"></image>
+          <view class="game-info">
+            <text class="game-name">斗地主</text>
+            <text class="game-brief">棋牌游戏代表作</text>
+          </view>
+        </view>
         <view class="game-item" bindtap="selectGame" data-game="catan">
           <image src="https://gips2.baidu.com/it/u=9614130,76584809&fm=3074&app=3074&f=JPEG" mode="aspectFit"></image>
           <view class="game-info">
