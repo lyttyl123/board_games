@@ -3,10 +3,10 @@ page {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #f8f9fa;
 }
 .scrollarea {
   flex: 1;
-  
   overflow-y: hidden;
 }
 
@@ -163,13 +163,13 @@ page {
 .start-btn {
   width: 80%;
   height: 88rpx;
-  line-height: 88rpx;
-  background: #3498db;
+  line-height: 58rpx;
+  background: #FFD700;
   color: #fff;
   font-size: 32rpx;
-  border-radius: 44rpx;
+  border-radius: 66rpx;
   text-align: center;
-  box-shadow: 0 4rpx 12rpx rgba(52, 152, 219, 0.2);
+  box-shadow: 0 4rpx 12rpx rgba(52, 152, 219, 0.2); 
   transition: all 0.3s ease;
 }
 

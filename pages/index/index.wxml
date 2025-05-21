@@ -2,7 +2,7 @@
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
     <view class="header">
-      <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+      <image class="logo" src="https://p2.itc.cn/q_70/images03/20230201/69689b9b95034ffc88305999cf73d053.png" mode="aspectFit"></image>
       <text class="title">桌游规则助手</text>
       <text class="subtitle">让桌游规则一目了然</text>
     </view>
@@ -10,15 +10,22 @@
     <view class="game-selection">
       <text class="section-title">选择要查看的桌游</text>
       <view class="game-list">
+        <view class="game-item" bindtap="selectGame" data-game="poker">
+          <image src="https://tse2-mm.cn.bing.net/th/id/OIP-C.0lFd3V1ugoAdSLcU4Ao9LwAAAA?rs=1&pid=ImgDetMain" mode="aspectFit"></image>
+          <view class="game-info">
+            <text class="game-name">斗地主</text>
+            <text class="game-brief">棋牌游戏代表作</text>
+          </view>
+        </view>
         <view class="game-item" bindtap="selectGame" data-game="catan">
-          <image src="/images/catan.png" mode="aspectFit"></image>
+          <image src="https://gips2.baidu.com/it/u=9614130,76584809&fm=3074&app=3074&f=JPEG" mode="aspectFit"></image>
           <view class="game-info">
             <text class="game-name">卡坦岛</text>
             <text class="game-brief">经典策略性桌游</text>
           </view>
         </view>
         <view class="game-item" bindtap="selectGame" data-game="birmingham">
-          <image src="/images/birmingham.png" mode="aspectFit"></image>
+          <image src="http://5b0988e595225.cdn.sohucs.com/images/20190827/e72fbe2a4f2a49798023daef29c454a3.jpeg" mode="aspectFit"></image>
           <view class="game-info">
             <text class="game-name">伯明翰</text>
             <text class="game-brief">工业革命主题策略游戏</text>

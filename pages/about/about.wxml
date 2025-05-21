@@ -1,6 +1,6 @@
 <view class="container">
   <view class="header">
-    <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    <image class="logo" src="https://p2.itc.cn/q_70/images03/20230201/69689b9b95034ffc88305999cf73d053.png" mode="aspectFit"></image>
     <text class="title">桌游规则助手</text>
   </view>
 
